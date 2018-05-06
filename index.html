@@ -1,433 +1,154 @@
-<!DOCTYPE html>
-<html lang=en>
-	<head>
-		<meta charset=utf-8>
-		<title>Lars Homestead</title>
-		 <!--  
-			 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-		-->
-		 <!--	-->
-		 <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-	
-		 <script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.min.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117844898-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-117844898-1');
-</script>		
-
-	</head>
-	<body>
-	<a-scene altspace="fullspace:true;">
-	
-
-<a-assets>
-	<img id="sand" src="textures/desert_sand_texture.jpg">
-	<img id="evap" src="textures/evap.jpg">
-	<img id="dome" src="textures/stained_plaster.jpg">
-	<img id="fence" src="textures/fence.png">	
-	<img id="ground" src="textures/ground_seamless_200.jpg">
-
-	<img id="dirt_floor" src="textures/dirt_floor.jpg">
-	<img id="catwalk" src="textures/catwalk.png">	
-<img id="uc" src="textures/uc_small.jpg">
-
-</a-assets>
-
-
-<a-entity id="master" scale=".45 .45 .45">
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.min.js"></script>
   
-<a-entity id="env_0" position="-27.916 20.33 33.966">
-	 <!-- Basic plane. -->
-	 <a-plane src="#uc" color="#ffffff" height="20" width="20" position="17.08 -16.448 -33.18" rotation="0.11459155902616465 88.75116246576451 4.640958140559668" scale="0.066 0.066 0.066"></a-plane>
-	<!---->
-	<a-entity id="all_top_lamps">
+  </head>
+  <body>
+ <script>
+   /**/
+ 		if (window.navigator.userAgent.indexOf('Altspace') == -1) {
+			document.write('<a-scene fog="type: exponential;density:0.00025;color: #874f01;">');
+		}else{
+      document.write('<a-scene sync-system="app: Tatooine; author: Altspace" altspace="fullspace:true;" fog="type: exponential;density:0.00025; color: #874f01;">');
+      
+       altspace.getUser().then(function (fulfilled) {
+            // yay, you got a new phone
+            console.log(fulfilled);
+         // output: { brand: 'Samsung', color: 'black' }
+        })
+        .catch(function (error) {
+            // oops, mom don't buy it
+            console.log(error.message);
+         // output: 'mom is not happy'
+        });   
+    }
 
-		<a-entity id="lamp" position="-1.784 -7.626 -16.222">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-2" position="14.038 -7.626 -5.407">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-3" position="31.518 -7.626 -17.64">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-4" position="32.872 -7.626 -35.368">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-5" position="21.14 -7.626 -49.328">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-6" position="2.173 -7.626 -46.361">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-7" position="-19.23 -7.626 -38.122">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-8" position="-13.227 -7.626 -27.619">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-9" position="-17.503 -9.106 -10.724">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-10" position="-33.639 -9.106 -7.859">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-11" position="-36.715 -9.106 -38.126">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity>
-	
-	</a-entity>
-	<a-entity id="all_bottom_lamps" position="0 -12.298 0">
+ </script>
+    <!--   
+   <a-scene sync-system='app: Tatooine; author: Altspace' altspace="fullspace:true;">
 
-		<a-entity id="lamp" position="2.543 -7.626 -9.47">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-2" position="24.793 -7.626 -8.027">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-3" position="33.969 -7.626 -24.14">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-13" position="33.844 -7.626 4.177">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-4" position="27.263 -7.626 -44.685">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity>
-		<a-entity id="lamp-6" position="2.173 -7.626 -46.361">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-7" position="-16.08 -7.626 -35.26">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-8" position="-14.674 -7.626 -15.46">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-9" position="-28.03 -9.106 -6.796">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-10" position="-39.722 -9.106 -15.205">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-11" position="-42.695 -9.106 -29.959">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity><a-entity id="lamp-12" position="-39.74 -7.038 -44.89">
-			<a-entity position="0 4.675 0" geometry="primitive:cone" material="color:#000000"></a-entity>
-			<a-entity position="0 4.199 0" scale="0.679 0.161 0.679" geometry="primitive:cylinder" material="color:#ffffff;emissive:#ffffff"></a-entity>
-			<a-entity position="0 5.91 0" scale="0.092 3.021 0.092" geometry="primitive:cylinder" material="color:#000000"></a-entity>
-		</a-entity>
-	
-	</a-entity>
+   <a-scene>
+  -->
+  <a-entity id="arrow_panel" position="3.602 0.933 0.825" rotation="-90.012 0 0" scale="0.08 0.017 0.08"  altspace-cursor-collider="enabled: false">
+    <a-entity id="up_arrow" position="-2.512 0 0" rotation="-180 0 0">
+    <a-entity position="-0.196 0 -0.282" rotation="0 -53.686 0" scale="0.189 1 0.45" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+    <a-entity position="0.201 0 -0.282" rotation="0 53.68614540375814 0" scale="0.189 1 0.45" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+    <a-entity position="-0.012 0 0" scale="0.189 1 1" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+  </a-entity>
+  <a-entity id="down_arrow" position="0.922 0.234 0">
+    <a-entity position="-0.196 0 -0.282" rotation="0 -53.686 0" scale="0.189 1 0.45" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+    <a-entity position="0.201 0 -0.282" rotation="0 53.68614540375814 0" scale="0.189 1 0.45" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+    <a-entity position="-0.012 0 0" scale="0.189 1 1" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+  </a-entity>
+  </a-entity>
+  <a-entity id="arrow_panel2" position="6.366 9.112 -0.706" rotation="-90.012 0 0" scale="0.08 0.017 0.08" altspace-cursor-collider="enabled: false">
+    <a-entity id="up_arrow" position="0.376 -0.119 0" rotation="-180 0 0">
+    <a-entity position="-0.196 0 -0.282" rotation="0 -53.686 0" scale="0.189 1 0.45" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+    <a-entity position="0.201 0 -0.282" rotation="0 53.68614540375814 0" scale="0.189 1 0.45" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+    <a-entity position="-0.012 0 0" scale="0.189 1 1" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+  </a-entity>
+  <a-entity id="down_arrow" position="-2.372 0.234 0">
+    <a-entity position="-0.196 0 -0.282" rotation="0 -53.686 0" scale="0.189 1 0.45" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+    <a-entity position="0.201 0 -0.282" rotation="0 53.68614540375814 0" scale="0.189 1 0.45" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+    <a-entity position="-0.012 0 0" scale="0.189 1 1" geometry="" material="color:white" altspace-cursor-collider="enabled: false"></a-entity>
+  </a-entity>
+  </a-entity>
+      <a-assets>
+        <img id="thesky" src="sky_redsunset1200.jpg">
+        <img id="btn" src="main_bottom/btn1.png">
+        <img id="catwalk" src="catwalk.png">
+        <img id="cracked" src="main_top/cracked.jpg">
+      </a-assets>
+<!---->
+<a-entity obj-model="mtl:main_top/hut.mtl;obj:main_top/hut.obj" id="hut" n-mesh-collider="type:environment;convex:false" position="-0.28 -1.161 0.05"></a-entity>
+      <a-entity obj-model="mtl:main_top/top.mtl;obj:main_top/top.obj" id="main_top" n-mesh-collider="type: environment;convex:false;"></a-entity>
+      <a-entity position="-964.431 7.773 -932.189" scale="1900.218 1 1900.181" id="desert" geometry="" material="src:#cracked;repeat: 500 500;" n-mesh-collider="type: environment;"></a-entity></a-entity>
+      <a-entity position="935.7919999999999 7.773 -962.4920000000001" scale="1900.218 1 1900.181" id="desert-3" geometry="" material="repeat:500 500;src:#cracked" n-mesh-collider="type:environment"></a-entity>
+      <a-entity position="985.02 7.773 938.013" scale="1900.218 1 1900.181" id="desert-2" geometry="" material="repeat:500 500;src:#cracked" n-mesh-collider="type:environment"></a-entity>
+      <a-entity position="-904.77 7.773 967.3499999999999" scale="1900.218 1 1900.181" id="desert-4" geometry="" material="repeat:500 500;src:#cracked" n-mesh-collider="type:environment"></a-entity>
 
-<a-entity id="deck" position="-1.925 -1.038 4.502">
-	<a-entity geometry="" id="fence_piece" material="side:double;transparent:true;src:#fence" position="-7.768 -3.202 5.017" scale="9.8 2.95 0.017" n-box-collider="type:environment"></a-entity>
-	<a-entity position="-7.812 -4.7 -1.088" scale="9.746 0.072 12.201" geometry="" id="platform" material="repeat:5 5;side:double;transparent:true;src:#catwalk" n-box-collider="type:environment"></a-entity>		
-	<a-entity position="-12.517 -7.73 4.795" scale="0.313 6.102 0.346" geometry="" id="post" material="color:black"></a-entity>
-	<a-entity position="-12.517 -7.73 -6.838" scale="0.313 6.102 0.346" geometry="" id="post-2" material="color:black"></a-entity>
-	<a-entity position="-3.186 -7.73 -6.838" scale="0.313 6.102 0.346" geometry="" id="post-3" material="color:black"></a-entity>
-	<a-entity position="-12.517 -7.73 -6.838" scale="0.313 6.102 0.346" geometry="" id="post-2" material="color:black"></a-entity>
-	<a-entity position="-3.186 -7.73 -10.194" scale="0.313 6.102 0.346" geometry="" id="post-4" material="color:black"></a-entity>
-	<a-entity position="-3.186 -7.73 4.863" scale="0.313 6.102 0.346" geometry="" id="post-5" material="color:black"></a-entity>
-	<a-entity position="-9.157 -7.115 -8.744" rotation="0 0 21.601" scale="13.159 0.007 3.412" geometry="" id="ramp-4" material="repeat:10 1;side:double;transparent:true;src:#catwalk" n-box-collider="type:environment"></a-entity>
-</a-entity>
-<!--	-->
-<a-entity id="outside_walls" position="0 0.557 0">
-	<a-entity id="o_wall" geometry="" material="color:black;" position="39.536 -11.98 -17.448" scale="1 21.435 75.582" n-box-collider="type:environment"></a-entity>
-	<a-entity id="o_wall-2" geometry="" material="color:black" position="-52.968 -11.98 -17.448" scale="1 21.435 75.582" n-box-collider="type:environment"></a-entity>
-	<a-entity id="o_wall-3" geometry="" material="color:black" position="-6.513 -11.98 17.384" scale="1 21.435 93.44" rotation="0 90 0" n-box-collider="type:environment"></a-entity>
-	<a-entity id="o_wall-4" geometry="" material="color:black" position="-6.513 -11.98 -52.922" scale="1 21.435 93.44" rotation="0 90 0" n-box-collider="type:environment"></a-entity>
-</a-entity>
-
-	<!--
-	<a-entity position="12.122 -15.605 -14.47" rotation="0 0 -25.15284720624314" scale="22.808 1 2.088" geometry="" id="ramp" material="repeat:3 3;side:double;src:#ground" n-box-collider="type:environment"></a-entity>
-	-->
-
-	<a-entity position="-10.766 -15.977 7.279" rotation="0 0 35.75256641616337" scale="19.646 0.007 3.412" geometry="" id="ramp-3" material="repeat:10 1;side:double;transparent:true;src:#catwalk" n-box-collider="type:environment"></a-entity>
-	<a-entity position="-6.453 -2.627 7.089" rotation="0 0 35.753" scale="10.416 0.007 3.412" geometry="" id="ramp-5" material="repeat:10 1;side:double;transparent:true;src:#catwalk;" n-box-collider="type:environment"></a-entity>
-	<a-entity obj-model="mtl:models/hut/hut3.mtl;obj:models/hut/hut3.obj" id="hut_model" position="-11.437 0.629 6.526" rotation="0 -55.119 0" scale="1.726 1.462 1.759"></a-entity>
-
-	
-<!--	-->
-	<a-entity obj-model="mtl:models/lid/lid2.mtl;obj:models/lid/lid2.obj" id="lid2" position="-37.583 -0.5840000000000001 -37.544" scale="1.93 1 2.309" altspace-cursor-collider="enabled:false" material="transparent:true"></a-entity>
-	
-	<a-entity obj-model="mtl:models/lid/lower_floor.mtl;obj:models/lid/lid2.obj" id="lower_floor" position="-37.583 -11.233 -37.544" scale="1.93 1 2.309" altspace-cursor-collider="enabled:false" material="transparent:true"></a-entity>
-
-
-
-<a-entity position="-27.49 -9.474 -22.046" scale="26.85 0.152 -2.457" geometry="" material="repeat:10 1;transparent:true;src:#catwalk;" id="bridge" n-box-collider="type:environment" rotation="0 15.2406773504799 0"></a-entity>
-
-	<a-entity id="craters" position="0 1.237 0" scale="1 1.558 1">
-		<a-entity obj-model="mtl:models/craters/craters.mtl;obj:models/craters/craters.obj" id="the_craters" altspace-cursor-collider="enabled:false" position="-37.583 -0.5840000000000001 -37.544" scale="1.93 1 2.309"></a-entity>
-	
-	</a-entity>
-
-
-
-<a-entity id="crater_wall" material="opacity:0" position="0 0.8059999999999999 6.425" scale="1 1.11 1">
-		<a-entity position="16.123 -10.948 -54.726" scale="12.639 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main" n-box-collider="type:environment" rotation="0 -4.755549699585833 0"></a-entity>
-		<a-entity position="16.077 -10.948 -13.468" scale="11.835 20.42 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-2" n-box-collider="type:environment" rotation="0 11.802930579694959 0"></a-entity>
-		<a-entity position="5.974 -10.707 -16.1" scale="14.21 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-6" rotation="0 -33.46073523564007 0" n-box-collider="type:environment"></a-entity>
-		<a-entity position="32.11 -10.948 -33.448" scale="11.835 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-3" rotation="0 -82.219 0" n-box-collider="type:environment"></a-entity>
-		<a-entity position="26.18 -10.948 -49.299" scale="14.544 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-5" rotation="0 -45.607 0" n-box-collider="type:environment"></a-entity>
-		<a-entity position="-0.899 -15.725 -24.758" scale="11.835 11.133 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-6" rotation="0 -75.229 0" n-box-collider="type:environment"></a-entity>
-	
-		<a-entity position="24.844 -10.948 -16.919" scale="12.367 20.42 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-8" n-box-collider="type:environment" rotation="0 27.2154952687141 0"></a-entity>
-		<a-entity position="30.269 -11.069 -24.907" scale="14.922 20.42 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-7" n-box-collider="type:environment" rotation="0 66.63499157371474 0"></a-entity>
-		<a-entity position="-1.401 -11.31 -41.507" scale="13.043 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-10" rotation="0 -111.44029115294512 0" n-box-collider="type:environment"></a-entity>
-		<a-entity position="5.575 -11.28 -51.414" scale="13.823 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-9" rotation="0 -139.22874421679006 0" n-box-collider="type:environment"></a-entity>
-<!--
-		<a-entity position="-2.799 -10.896 -32.95" scale="7.792 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground" id="main-11" n-box-collider="type:environment" rotation="0 -78.38062637389662 0"></a-entity>
--->		
-		<a-entity position="30.641 -10.948 -42.316" scale="6.404 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-12" n-box-collider="type:environment" rotation="0 -75.859612075321 0"></a-entity>
-		<!--
-		<a-entity position="-1.521 -7.917 -29.009" scale="11.835 11.652 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground" id="main-13" rotation="0 -75.57313317775558 0" n-box-collider="type:environment"></a-entity>
-		-->
-	</a-entity>
-	<a-entity id="crater_wall-2" position="-37.087 0.8400000000000001 -0.323" scale="0.6 1.11 0.7">
-				<a-entity position="16.077 -10.948 -55.713" scale="13.445 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main" n-box-collider="type:environment"></a-entity>
-				<a-entity position="15.459 -10.948 -12.181" scale="11.835 21.069 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-2" n-box-collider="type:environment"></a-entity>
-				<a-entity position="5.735 -10.948 -14.095" scale="11.835 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-6" rotation="0 -27.445 0" n-box-collider="type:environment"></a-entity>
-				<a-entity position="39.494 -15.871 -33.448" scale="11.835 10.738 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-3" rotation="0 -82.219 0" n-box-collider="type:environment"></a-entity>
-				<a-entity position="31.358 -10.948 -48.726" scale="11.835 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-5" rotation="0 -47.09713075975367 0" n-box-collider="type:environment"></a-entity>
-				<a-entity position="-2.056 -10.948 -20.996" scale="11.835 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-6" rotation="0 -53.85803274229738 0" n-box-collider="type:environment"></a-entity>
-				<a-entity position="-5.311 -10.948 -32.44" scale="15.939 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-4" rotation="0 -84.85504945887493 0" n-box-collider="type:environment"></a-entity>
-				<a-entity position="26.552 -10.948 -14.815" scale="12.367 20.42 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-8" n-box-collider="type:environment" rotation="0 27.2154952687141 0"></a-entity>
-				<a-entity position="34.42 -11.069 -22.811" scale="12.587 20.956 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-7" n-box-collider="type:environment" rotation="0 61.13459674045883 0"></a-entity>
-				<a-entity position="-3.414 -10.948 -43.954" scale="11.835 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-10" rotation="0 -123.07133439410083 0" n-box-collider="type:environment"></a-entity>
-				<a-entity position="4.061 -10.948 -52.065" scale="13.362 20.847 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-9" rotation="0 -148.28147737985705 0" n-box-collider="type:environment"></a-entity>
-				<a-entity position="24.301 -10.948 -54.299" scale="8.109 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-11" n-box-collider="type:environment" rotation="0 -26.012283898939376 0"></a-entity>
-				<a-entity position="36.223 -10.948 -39.698" scale="11.573 20.732 4.624" geometry="primitive:plane" material="repeat:3 3;side:double;src:#ground;opacity:0" id="main-12" n-box-collider="type:environment" rotation="0 -75.00017538262476 0"></a-entity>
-	</a-entity>
-
-
-	<a-entity id="top_colliders" position="0 -19.204 0"  visible="false" class="colliders">
-
-		<a-entity position="23.555 19.163 5.105" scale="52.669 1 24.245" geometry="" id="sand-2" n-box-collider="type:environment" material="color:white;opacity:0;"></a-entity>
-		<a-entity  position="-26.139 19.163 -44.528" scale="56.238 1 12.175" geometry="" id="sand-3" n-box-collider="type:environment" material="color:white;opacity:0"></a-entity>
-		<a-entity  position="-9.363 19.163 15.554" scale="11.152 1 11.861" geometry="" id="sand-4" n-box-collider="type:environment" material="color:white;opacity:0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-0.553 19.163 -9.472" scale="11.152 1 25.736" geometry="" id="sand-5" n-box-collider="type:environment" rotation="0 55.69149768671602 0"></a-entity>
-			<a-entity material="color:white;opacity:0" position="28.459 19.163 -45.675" scale="11.152 1 25.736" geometry="" id="sand-10" n-box-collider="type:environment" rotation="0 45.14907425630887 0"></a-entity>
-			<a-entity material="color:white;opacity:0" position="-16.926 19.163 -40.093" scale="11.152 1 25.736" geometry="" id="sand-11" n-box-collider="type:environment" rotation="0 45.14907425630887 0"></a-entity>
-			<a-entity material="color:white;opacity:0" position="-41.225 19.163 -11.282" scale="11.152 1 25.736" geometry="" id="sand-12" n-box-collider="type:environment" rotation="0 45.14907425630887 0"></a-entity>
-			<a-entity material="color:white;opacity:0" position="-15.293 19.163 -9.464" scale="11.152 1 25.736" geometry="" id="sand-13" n-box-collider="type:environment" rotation="0 131.89488443911551 0"></a-entity>
-			<a-entity material="color:white;opacity:0" position="29.285 19.163 -9.464" scale="11.152 1 25.736" geometry="" id="sand-14" n-box-collider="type:environment" rotation="0 131.89488443911551 0"></a-entity>
-			<a-entity material="color:white;opacity:0" position="0.96 19.163 -44.95" scale="11.152 1 25.736" geometry="" id="sand-15" n-box-collider="type:environment" rotation="0 131.89488443911551 0"></a-entity>
-			<a-entity material="color:white;opacity:0" position="-39.109 19.163 -37.705" scale="11.152 1 25.736" geometry="" id="sand-16" n-box-collider="type:environment" rotation="0 131.89488443911551 0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-35.883 19.163 4.316" scale="41.607 1 26.744" geometry="" id="sand" n-box-collider="type:environment"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-8.39 19.163 -17.29" scale="13.869 1 45.387" geometry="" id="sand-7" n-box-collider="type:environment"></a-entity>
-		
-		<a-entity material="color:white;opacity:0" position="-47.059 19.163 -23.603" scale="15.045 1 29.992" geometry="" id="sand-8" n-box-collider="type:environment"></a-entity>
-		<a-entity material="color:white;opacity:0" position="18.028 19.163 -48.468" scale="31.954 1 3.786" geometry="" id="sand-6" n-box-collider="type:environment"></a-entity>
-		<a-entity material="color:white;opacity:0" position="39.445 19.163 -23.603" scale="18.809 1 54.266" geometry="" id="sand-9" n-box-collider="type:environment"></a-entity>
-	
-	</a-entity>
-
-	<a-entity id="bottom_colliders" position="0 -30.01 0">
-
-		<a-entity material="color:white;opacity:0" position="23.665 19.163 5.105" scale="52.669 1 24.245" geometry="" id="sand-2" n-box-collider="type:environment"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-26.139 19.163 -44.528" scale="56.238 1 12.175" geometry="" id="sand-3" n-box-collider="type:environment"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-9.363 19.163 15.554" scale="11.152 1 11.861" geometry="" id="sand-4" n-box-collider="type:environment"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-0.553 19.163 -9.472" scale="11.152 1 25.736" geometry="" id="sand-5" n-box-collider="type:environment" rotation="0 55.69149768671602 0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="28.459 19.163 -45.675" scale="11.152 1 25.736" geometry="" id="sand-10" n-box-collider="type:environment" rotation="0 45.14907425630887 0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-16.926 19.163 -40.093" scale="11.152 1 25.736" geometry="" id="sand-11" n-box-collider="type:environment" rotation="0 45.14907425630887 0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-41.225 19.163 -11.282" scale="11.152 1 25.736" geometry="" id="sand-12" n-box-collider="type:environment" rotation="0 45.14907425630887 0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-15.293 19.163 -9.464" scale="11.152 1 25.736" geometry="" id="sand-13" n-box-collider="type:environment" rotation="0 131.89488443911551 0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="29.285 19.163 -9.464" scale="11.152 1 25.736" geometry="" id="sand-14" n-box-collider="type:environment" rotation="0 131.89488443911551 0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="0.96 19.163 -44.95" scale="11.152 1 25.736" geometry="" id="sand-15" n-box-collider="type:environment" rotation="0 131.89488443911551 0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-39.109 19.163 -37.705" scale="11.152 1 25.736" geometry="" id="sand-16" n-box-collider="type:environment" rotation="0 131.89488443911551 0"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-35.883 19.163 4.316" scale="41.607 1 26.744" geometry="" id="sand" n-box-collider="type:environment"></a-entity>
-		<a-entity material="color:white;opacity:0" position="-8.39 19.163 -17.29" scale="13.869 1 45.387" geometry="" id="sand-7" n-box-collider="type:environment"></a-entity>
-		
-		<a-entity material="color:white;opacity:0" position="-47.059 19.163 -23.603" scale="15.045 1 29.992" geometry="" id="sand-8" n-box-collider="type:environment"></a-entity>
-		<a-entity material="color:white;opacity:0" position="18.028 19.163 -48.468" scale="31.954 1 3.786" geometry="" id="sand-6" n-box-collider="type:environment"></a-entity>
-		<a-entity material="color:white;opacity:0" position="39.445 19.163 -23.603" scale="18.809 1 54.266" geometry="" id="sand-9" n-box-collider="type:environment"></a-entity>
-
-	</a-entity>
-		
-		
-		
-<a-entity material="color:#000000" position="-62.974 0 -15.224" scale="6.436 1.97 6.883" geometry="primitive:cylinder" id="vent" n-layout-browser="isEnclosure:true;url:localhost:8080"></a-entity>
-
+      <a-entity obj-model="mtl:main_bottom/main_bottom.mtl;obj:main_bottom/main_bottom.obj" id="main_bottom" n-mesh-collider="type: environment;"></a-entity>
+      <a-entity obj-model="mtl:main_bottom/rocks.mtl;obj:main_bottom/rocks.obj" id="rocks" n-mesh-collider="type: environment;convex:false;"></a-entity> 
+      <a-entity id="scaff" position"0="" 3.918="" 0"="" position="0 3.973 0">
+        <a-entity n-box-collider="type:environment" position="3.542 3.692 1.072" scale="0.506 15.6 0.401" geometry="" material="repeat:0.35 13;transparent:true;src:#catwalk;"></a-entity>
+        <a-entity n-box-collider="type:environment" position="6.27 3.692 1.072" scale="0.506 15.6 0.401" geometry="" material="repeat:0.35 13;transparent:true;src:#catwalk;"></a-entity>
+        <a-entity n-box-collider="type:environment" position="3.586 3.692 -1.017" scale="0.506 15.6 0.401" geometry="" material="repeat:0.35 13;transparent:true;src:#catwalk;"></a-entity>
+        <a-entity n-box-collider="type:environment" position="6.27 3.692 -0.964" scale="0.506 15.6 0.401" geometry="" material="repeat:0.35 13;transparent:true;src:#catwalk;"></a-entity>
+    </a-entity>
+      <a-entity n-box-collider="type: environment;" position="4.845 0.025 0.041" scale="3.056 0.06 1.679" geometry="" id="lift" sync="" sync-transform="" material="src:#catwalk;repeat: 1 1;transparent:true;">
+          <a-animation attribute="position" to="4.845 0.025 0.041" from="4.845 8.185 0.041" dur="10000" begin="elevator_down"></a-animation>         
+          <a-animation attribute="position" from="4.845 0.025 0.041" to="4.845 8.185 0.041" dur="10000" begin="elevator_up"></a-animation>
+    
+        </a-entity>
+        <a-entity geometry="" id="lift2" material="transparent:true;src:#catwalk" n-box-collider="type:environment" position="4.824 15.358 0.101" scale="5.581 0.187 6.874"></a-entity>
+        <a-entity id="stairs">
+          <a-entity geometry="" id="lift2-2" material="transparent:true;src:#catwalk" n-box-collider="type:environment" position="12.089 7.825 13.543" scale="1.451 0.806 1.451"></a-entity>
+          <a-entity geometry="" id="lift2-4" material="transparent:true;src:#catwalk" n-box-collider="type:environment" position="10.615 7.825 13.543" scale="1.451 0.806 1.451"></a-entity>
+          <a-entity geometry="" id="lift2-5" material="transparent:true;src:#catwalk" n-box-collider="type:environment" position="7.711 7.825 13.543" scale="1.451 0.806 1.451"></a-entity>
+          <a-entity geometry="" id="lift2-6" material="transparent:true;src:#catwalk" n-box-collider="type:environment" position="9.158 7.825 13.543" scale="1.451 0.806 1.451"></a-entity>
+          <a-entity geometry="" id="lift2-3" material="transparent:true;color:blue;src:#catwalk" n-box-collider="type:environment" position="10.411 6.799 12.975" scale="1.451 0.806 1.451"></a-entity>
+  </a-entity>
+        </a-entity>
+        <a-entity id="panel" position="3.854 0.93 0.975" rotation="0 -180 0" scale="0.126 0.126 0.126">
+            <a-entity position="3.625 0 0.738" geometry="" id="el_up" material="color:blue;src:#btn">
+    
+            </a-entity>
+            <a-entity position="1.527 0 0.713" geometry="" id="el_down" material="color:green;src:#btn">
+               
+            </a-entity>
+    </a-entity>
+    <a-entity id="panel2" position="5.962 9.102 -0.861" scale="0.126 0.126 0.126">
+        <a-entity position="3.438 0 0.738" geometry="" id="el_up" material="color:blue;src:#btn">
  
-
-<a-entity position="-16.647 -20.792 -17.654" scale="130.939 1 71.927" geometry="" material="repeat:1 1;src:#dirt_floor;" static-body="" id="floor"></a-entity>
-<!---->
-<a-entity id="the_test" position="65.755 1.108 0"> 
-	<a-entity position="0 6.586 0" scale="0.787 9.029 0.803" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.074 9.122 -0.428" scale="0.06 12.226 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 -1.319" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 -1.585" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 11.854 0" scale="0.592 1.431 0.536" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 0.246 0" scale="2.028 0.718 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -0.444 0" scale="1.394 0.718 1.313" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -1.644 0" scale="2.028 1.431 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.009 5.037 0" scale="3.467 0.424 3.336" geometry="" material="src:#evap"></a-entity>
-	<a-entity position="0.009 1.398 0" scale="2.088 2.097 2.54" geometry="" material="src:#evap"></a-entity>
+        </a-entity>
+        <a-entity position="1.725 0 0.713" geometry="" id="el_down" material="color:green;src:#btn">
+           
+        </a-entity>
 </a-entity>
-<a-entity id="the_test-2" position="0 1.108 106.536"> 
-	<a-entity position="0 6.586 0" scale="0.787 9.029 0.803" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.074 9.122 -0.428" scale="0.06 12.226 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 -1.319" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 -1.585" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 11.854 0" scale="0.592 1.431 0.536" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 0.246 0" scale="2.028 0.718 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -0.444 0" scale="1.394 0.718 1.313" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -1.644 0" scale="2.028 1.431 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.009 5.037 0" scale="3.467 0.424 3.336" geometry="" material="src:#evap"></a-entity>
-	<a-entity position="0.009 1.398 0" scale="2.088 2.097 2.54" geometry="" material="src:#evap"></a-entity>
-</a-entity>
+<a-entity id="binary" scale="71.422 71.422 71.422" position="0 -635.501 -676.741">
+  <a-entity position="-0.532 10.357 -24.237" geometry="primitive:sphere" material="color:red;emissive:#f4bf42;opacity:.2"></a-entity>
+  <a-entity position="1.742 9.53 -24.237" geometry="primitive:sphere" material="color:yellow;emissive:#f45816;opacity:.3;"></a-entity>
+  </a-entity>
+<a-sky src="#thesky" radius="2500" rotation="0 -83.0215845144563 0"></a-sky>
 
-<a-entity id="the_test-3" position="66.126 1.108 93.208"> 
-	<a-entity position="0 6.586 0" scale="0.787 9.029 0.803" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.074 9.122 -0.428" scale="0.06 12.226 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 -1.319" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 -1.585" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 11.854 0" scale="0.592 1.431 0.536" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 0.246 0" scale="2.028 0.718 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -0.444 0" scale="1.394 0.718 1.313" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -1.644 0" scale="2.028 1.431 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.009 5.037 0" scale="3.467 0.424 3.336" geometry="" material="src:#evap"></a-entity>
-	<a-entity position="0.009 1.398 0" scale="2.088 2.097 2.54" geometry="" material="src:#evap"></a-entity>
-</a-entity>
-
-<a-entity id="the_test-4" position="-162.722 1.108 93.208"> 
-	<a-entity position="0 6.586 0" scale="0.787 9.029 0.803" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.074 9.122 -0.428" scale="0.06 12.226 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 -1.319" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 -1.585" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 11.854 0" scale="0.592 1.431 0.536" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 0.246 0" scale="2.028 0.718 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -0.444 0" scale="1.394 0.718 1.313" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -1.644 0" scale="2.028 1.431 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.009 5.037 0" scale="3.467 0.424 3.336" geometry="" material="src:#evap"></a-entity>
-	<a-entity position="0.009 1.398 0" scale="2.088 2.097 2.54" geometry="" material="src:#evap"></a-entity>
-</a-entity>
-
-<a-entity id="the_test-5" position="-162.722 1.108 -97.757"> 
-	<a-entity position="0 6.586 0" scale="0.787 9.029 0.803" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.074 9.122 -0.428" scale="0.06 12.226 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 -1.319" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 -1.585" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 11.854 0" scale="0.592 1.431 0.536" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 0.246 0" scale="2.028 0.718 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -0.444 0" scale="1.394 0.718 1.313" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -1.644 0" scale="2.028 1.431 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.009 5.037 0" scale="3.467 0.424 3.336" geometry="" material="src:#evap"></a-entity>
-	<a-entity position="0.009 1.398 0" scale="2.088 2.097 2.54" geometry="" material="src:#evap"></a-entity>
-</a-entity>
-
-<a-entity id="the_test-6" position="-288.354 1.108 -97.757"> 
-	<a-entity position="0 6.586 0" scale="0.787 9.029 0.803" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.074 9.122 -0.428" scale="0.06 12.226 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 -1.319" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 -1.585" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 11.854 0" scale="0.592 1.431 0.536" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 0.246 0" scale="2.028 0.718 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -0.444 0" scale="1.394 0.718 1.313" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -1.644 0" scale="2.028 1.431 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.009 5.037 0" scale="3.467 0.424 3.336" geometry="" material="src:#evap"></a-entity>
-	<a-entity position="0.009 1.398 0" scale="2.088 2.097 2.54" geometry="" material="src:#evap"></a-entity>
-</a-entity>
-
-
-<a-entity id="the_test-7" position="16.515 -19.484 -33.105" scale="0.223 0.788 0.356"> 
-	<a-entity position="0 6.586 0" scale="0.787 9.029 0.803" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.074 9.122 -0.428" scale="0.06 12.226 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 -1.319" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="1.36 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 1.047" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="-1.528 11.442 -1.585" scale="0.06 17.364 0.049" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 11.854 0" scale="0.592 1.431 0.536" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 0.246 0" scale="2.028 0.718 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -0.444 0" scale="1.394 0.718 1.313" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0 -1.358 0" scale="2.028 1.431 1.91" geometry="primitive:cylinder" material="src:#evap"></a-entity>
-	<a-entity position="0.009 5.037 0" scale="3.467 0.424 3.336" geometry="" material="src:#evap"></a-entity>
-	<a-entity position="0.009 1.398 0" scale="2.088 2.097 2.54" geometry="" material="src:#evap"></a-entity>
-</a-entity>
-
-
-
-
-
-<!---->
-
-<a-sky color="#7e9299" radius="2500" material="" geometry=""></a-sky>
+<a-entity position="1 1 1" camera="active:true;userHeight:1.6" wasd-controls="easing:20.01;fly:true;acceleration:165" rotation="-38.80136368210983 -1208.0242228532563 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" data-aframe-inspector="default-camera" gearvr-controls>
+    <a-cursor></a-cursor>
 
 </a-entity>
-
-<a-entity position="1 1 1" camera="active:true;userHeight:1.6" wasd-controls="easing:20.01;fly:true;acceleration:165" rotation="-38.80136368210983 -1208.0242228532563 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" data-aframe-inspector="default-camera"></a-entity>
-<!---->
-<a-entity id="desert2">
-	<a-entity id="snd" position="1996 19.795 943.357" scale="4158.082 -2.024 1783.906" geometry="" material="color:white;repeat:400 400;src:#sand;side:double;" n-box-collider="type:environment"></a-entity>
-	<a-entity id="snd-2" position="-2067.0669999999996 19.785 -910.6709999999999" scale="4158.082 -2.024 1783.906" geometry="" material="repeat:400 400;side:double;src:#sand" n-box-collider="type:environment"></a-entity>
-	<a-entity id="snd-3" position="-2162.059 19.785 873.873" scale="4158.082 -2.024 1783.906" geometry="" material="repeat:400 400;side:double;src:#sand" n-box-collider="type:environment"></a-entity>
-	<a-entity id="snd-4" position="2090.972 19.785 -840.5459999999999" scale="4158.082 -2.024 1783.906" geometry="" material="repeat:400 400;side:double;src:#sand" n-box-collider="type:environment"></a-entity>
+<a-entity id="portals">
+  <a-entity id="portal_1" n-portal="" geometry="" position="11.617 0 22.628"></a-entity>
+  <a-entity id="portal_2" n-portal="" geometry="" position="0 0 -17.011"></a-entity>
+  <a-entity id="portal_3" n-portal="" geometry="" position="-23.819 0 0"></a-entity>
+  <a-entity id="portal_4" n-portal="" geometry="" position="38.742 0 0"></a-entity>
 </a-entity>
-
-<a-entity geometry="" material="color:red;opacity:0;" n-portal="" position="-59.973 0 -0.44"></a-entity>
-<a-entity geometry="" material="opacity:0;color:red" n-portal="" position="-99.46 0 18.539"></a-entity>
-<a-entity geometry="" material="opacity:0;color:red" n-portal="" position="-40.215 0 66.354"></a-entity>
-<a-entity geometry="" material="opacity:0;color:red" n-portal="" position="23.025 0 16.199"></a-entity>
-<a-entity geometry="" material="opacity:0;color:red" n-portal="" position="-39.254 0 63.388"></a-entity>
-<a-entity geometry="" material="opacity:0;color:red" n-portal="" position="-42.278 0 -30.071"></a-entity>
-</a-entity>
-<!-- Match Gear VR controller if present, regardless of hand. -->
-<a-entity gearvr-controls></a-entity>
-
-<!-- Match Gear VR controller if present and for specified hand.
-<a-entity gearvr-controls="hand: left"></a-entity>
-<a-entity gearvr-controls="hand: right"></a-entity>
- -->
 </a-scene>
+    <script>
+    var sceneEl = document.querySelector('a-scene');
+      //sceneEl.querySelector('.tarot_card').setAttribute('rotation', '90 0 0');
+      var el_up = sceneEl.querySelector('#el_up');
+      var el_down = sceneEl.querySelector('#el_down');
+      var el_up2 = sceneEl.querySelector('#panel2 #el_up');
+      var el_down2 = sceneEl.querySelector('#panel2 #el_down');
 
-<script>
-var el = document.querySelector(".colliders");
+      var lift = sceneEl.querySelector('#lift');
+      el_up.addEventListener('click', function (event) {
+        console.log('ani started', event);
+        lift.emit('elevator_up', 'text', true);
+      });
+      el_down.addEventListener('click', function (event) {
+        console.log('ani started', event);
+        lift.emit('elevator_down', 'text', true);
+      });
+      el_up2.addEventListener('click', function (event) {
+        console.log('ani started', event);
+        lift.emit('elevator_up', 'text', true);
+      });
+      el_down2.addEventListener('click', function (event) {
+        console.log('ani started', event);
+        lift.emit('elevator_down', 'text', true);
+      });
 
-el.setAttribute("visible",false);
-</script>
-
-
-	</body>
+    </script>
+  </body>
 </html>
