@@ -18,9 +18,9 @@
  <script>
    /**/
  		if (window.navigator.userAgent.indexOf('Altspace') == -1) {
-			document.write('<a-scene fog="type: exponential;density:0.00025;color: #874f01;">');
+			document.write('<a-scene>');
 		}else{
-      document.write('<a-scene sync-system="app: Tatooine; author: Altspace" altspace="fullspace:true;" fog="type: exponential;density:0.00025; color: #874f01;">');
+      document.write('<a-scene sync-system="app: Tatooine; author: Altspace" altspace="fullspace:true;">');
       
        altspace.getUser().then(function (fulfilled) {
             // yay, you got a new phone
@@ -134,28 +134,30 @@
 </a-entity>
 </a-scene>
     <script>
+      //grab aframe scene 
     var sceneEl = document.querySelector('a-scene');
-      //sceneEl.querySelector('.tarot_card').setAttribute('rotation', '90 0 0');
+      //grab buttons (in this scene there are 4)
       var el_up = sceneEl.querySelector('#el_up');
       var el_down = sceneEl.querySelector('#el_down');
       var el_up2 = sceneEl.querySelector('#panel2 #el_up');
       var el_down2 = sceneEl.querySelector('#panel2 #el_down');
-
+//grab actual elevator "floor" element id #lift
       var lift = sceneEl.querySelector('#lift');
+
       el_up.addEventListener('click', function (event) {
-        console.log('ani started', event);
+        
         lift.emit('elevator_up', 'text', true);
       });
       el_down.addEventListener('click', function (event) {
-        console.log('ani started', event);
+       
         lift.emit('elevator_down', 'text', true);
       });
       el_up2.addEventListener('click', function (event) {
-        console.log('ani started', event);
+       
         lift.emit('elevator_up', 'text', true);
       });
       el_down2.addEventListener('click', function (event) {
-        console.log('ani started', event);
+       
         lift.emit('elevator_down', 'text', true);
       });
 
