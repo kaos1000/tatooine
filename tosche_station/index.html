@@ -11,7 +11,7 @@
       <a-mixin id="texture1" material="texture1.jpg;"></a-mixin>     
       <a-mixin id="texture2" material="texture2.jpg;"></a-mixin>   
       <a-mixin id="texture3" material="texture3.jpg;"></a-mixin> 
-      <a-mixin id="altsp_env" altspace-cursor-collider="enabled: false" n-mesh-collider="type:environment"></a-mixin> 
+      <a-mixin id="altsp_env" altspace-cursor-collider="enabled: false"></a-mixin> 
       
       <img id="sky" src="sky.jpg">  
       <img id="desert" src="cracked.jpg">  
@@ -20,13 +20,13 @@
   <a-entity scale="2.129 2.129 2.129" geometry="" id="btn1_test" mixin="blue_btn1"></a-entity>
   <a-entity scale="5.491 4.328 5.491" geometry="primitive:cone;radiusTop:0.75;segmentsRadial:4" id="btn1_test-2" mixin="blue_btn1" position="-11.638 4.468 -18.793"></a-entity>
   <a-entity id="hills" position="-68.321 0 122.058">
-    <a-entity mixin="altsp_env" position="-22.726 -0.207 -27.567" scale="55.789 4.249 65.685" geometry="primitive:dodecahedron" id="hill"  material="repeat:12 12;src:texture1.jpg"></a-entity>
-    <a-entity mixin="altsp_env" position="-77.689 -0.207 -45.999" scale="55.789 12.337 65.685" geometry="primitive:dodecahedron" id="hill-5"  material="repeat:12 12;src:texture1.jpg"></a-entity>
-    <a-entity mixin="altsp_env" position="56.719 -0.207 -46.427" scale="55.789 33.889 36.966" geometry="primitive:dodecahedron" id="hill-2"  material="repeat:12 12;src:texture1.jpg" rotation="0 19.537860813961075 0"></a-entity>
-    <a-entity mixin="altsp_env" position="-81.414 -0.207 5.241" scale="26.702 13.282 11.935" geometry="primitive:dodecahedron" id="hill-4"  material="repeat:12 12;src:texture1.jpg"></a-entity>
-    <a-entity mixin="altsp_env" position="-72.953 12.82 -25.007" scale="26.702 11.467 11.935" geometry="primitive:dodecahedron" id="hill-6"  material="repeat:12 12;src:texture1.jpg" rotation="7.734930234266114 -16.386592940741544 24.6371851906254"></a-entity>
-    <a-entity mixin="altsp_env" position="-43.758 12.82 -104.82" scale="26.702 11.467 11.935" geometry="primitive:dodecahedron" id="hill-7"  material="repeat:12 12;src:texture1.jpg" rotation="7.734930234266114 -16.386592940741544 24.6371851906254"></a-entity>
-    <a-entity mixin="altsp_env" position="-12.056 -0.207 -85.843" scale="55.789 33.889 36.966" geometry="primitive:dodecahedron" id="hill-3"  material="repeat:12 12;src:texture1.jpg" rotation="0 19.82433971152648 0"></a-entity>
+    <a-entity n-mesh-collider="type:environment"  mixin="altsp_env" position="-22.726 -0.207 -27.567" scale="55.789 4.249 65.685" geometry="primitive:dodecahedron" id="hill"  material="repeat:12 12;src:texture1.jpg"></a-entity>
+    <a-entity n-mesh-collider="type:environment" mixin="altsp_env" position="-77.689 -0.207 -45.999" scale="55.789 12.337 65.685" geometry="primitive:dodecahedron" id="hill-5"  material="repeat:12 12;src:texture1.jpg"></a-entity>
+    <a-entity n-mesh-collider="type:environment" mixin="altsp_env" position="56.719 -0.207 -46.427" scale="55.789 33.889 36.966" geometry="primitive:dodecahedron" id="hill-2"  material="repeat:12 12;src:texture1.jpg" rotation="0 19.537860813961075 0"></a-entity>
+    <a-entity n-mesh-collider="type:environment" mixin="altsp_env" position="-81.414 -0.207 5.241" scale="26.702 13.282 11.935" geometry="primitive:dodecahedron" id="hill-4"  material="repeat:12 12;src:texture1.jpg"></a-entity>
+    <a-entity n-mesh-collider="type:environment" mixin="altsp_env" position="-72.953 12.82 -25.007" scale="26.702 11.467 11.935" geometry="primitive:dodecahedron" id="hill-6"  material="repeat:12 12;src:texture1.jpg" rotation="7.734930234266114 -16.386592940741544 24.6371851906254"></a-entity>
+    <a-entity n-mesh-collider="type:environment" mixin="altsp_env" position="-43.758 12.82 -104.82" scale="26.702 11.467 11.935" geometry="primitive:dodecahedron" id="hill-7"  material="repeat:12 12;src:texture1.jpg" rotation="7.734930234266114 -16.386592940741544 24.6371851906254"></a-entity>
+    <a-entity n-mesh-collider="type:environment" mixin="altsp_env" position="-12.056 -0.207 -85.843" scale="55.789 33.889 36.966" geometry="primitive:dodecahedron" id="hill-3"  material="repeat:12 12;src:texture1.jpg" rotation="0 19.82433971152648 0"></a-entity>
   </a-entity>
 <!-- Textured plane parallel to ground. -->
 <a-plane material="src:cracked.jpg;repeat: 4000 4000;" height="4000" width="4000" rotation="-90 0 0" altspace-cursor-collider="enabled: false"></a-plane>
