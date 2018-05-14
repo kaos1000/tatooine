@@ -120,34 +120,6 @@
         <a-entity position="3.438 0 0.738" geometry="" id="el_up" material="color:blue;src:#btn"> </a-entity>
         <a-entity position="1.725 0 0.713" geometry="" id="el_down" material="color:green;src:#btn"></a-entity>
     </a-entity>
-<a-entity id="binary" scale="71.422 71.422 71.422" position="0 -635.501 -676.741">
-  <a-entity position="-0.532 10.357 -24.237" geometry="primitive:sphere" material="color:red;emissive:#f4bf42;opacity:.2"></a-entity>
-  <a-entity position="1.742 9.53 -24.237" geometry="primitive:sphere" material="color:yellow;emissive:#f45816;opacity:.3;"></a-entity>
-  </a-entity>
-  <!--
-<a-sky src="#thesky" radius="2500" rotation="0 -83.0215845144563 0"></a-sky>
--->
-<script>
-  /**/
-    if (window.navigator.userAgent.indexOf('Altspace') == -1) {
-     document.write('<a-sky src="#thesky" radius="2500" rotation="0 -83.0215845144563 0"></a-sky>');
-   }else{
-     //document.write('<a-scene sync-system="app: Tatooine; author: Altspace" altspace="fullspace:true;">');
-  
-   }
-
-</script>
-<a-entity position="1 1 1" camera="active:true;userHeight:1.6" wasd-controls="easing:20.01;fly:true;acceleration:165" rotation="-38.80136368210983 -1208.0242228532563 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" data-aframe-inspector="default-camera" gearvr-controls>
-    <a-cursor></a-cursor>
-
-</a-entity>
-<a-entity id="portals">
-  <a-entity id="portal_1" n-portal="" geometry="" position="11.617 0 22.628"></a-entity>
-  <a-entity id="portal_2" n-portal="" geometry="" position="0 0 -17.011"></a-entity>
-  <a-entity id="portal_3" n-portal="" geometry="" position="-23.819 0 0"></a-entity>
-  <a-entity id="portal_4" n-portal="" geometry="" position="38.742 0 0"></a-entity>
-</a-entity>
-</a-scene>
     <script>
       //grab aframe scene 
     var sceneEl = document.querySelector('a-scene');
@@ -179,6 +151,34 @@
 
 
 
-    </script>
+    </script><a-entity id="binary" scale="71.422 71.422 71.422" position="0 -635.501 -676.741">
+  <a-entity position="-0.532 10.357 -24.237" geometry="primitive:sphere" material="color:red;emissive:#f4bf42;opacity:.2"></a-entity>
+  <a-entity position="1.742 9.53 -24.237" geometry="primitive:sphere" material="color:yellow;emissive:#f45816;opacity:.3;"></a-entity>
+  </a-entity>
+  <!--
+<a-sky src="#thesky" radius="2500" rotation="0 -83.0215845144563 0"></a-sky>
+-->
+<script>
+  /**/
+    if (window.navigator.userAgent.indexOf('Altspace') == -1) {
+     document.write('<a-sky src="#thesky" radius="2500" rotation="0 -83.0215845144563 0"></a-sky>');
+   }else{
+     //document.write('<a-scene sync-system="app: Tatooine; author: Altspace" altspace="fullspace:true;">');
+  
+   }
+
+</script>
+<a-entity position="1 1 1" camera="active:true;userHeight:1.6" wasd-controls="easing:20.01;fly:true;acceleration:165" rotation="-38.80136368210983 -1208.0242228532563 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" data-aframe-inspector="default-camera" gearvr-controls>
+    <a-cursor></a-cursor>
+
+</a-entity>
+<a-entity id="portals">
+  <a-entity id="portal_1" n-portal="" geometry="" position="11.617 0 22.628"></a-entity>
+  <a-entity id="portal_2" n-portal="" geometry="" position="0 0 -17.011"></a-entity>
+  <a-entity id="portal_3" n-portal="" geometry="" position="-23.819 0 0"></a-entity>
+  <a-entity id="portal_4" n-portal="" geometry="" position="38.742 0 0"></a-entity>
+</a-entity>
+<a-entity position="5.688 11.748 13.512" geometry="" material="color:black;opacity:0;" n-text="text:this is a \n test" id="test" n-billboard=""></a-entity></a-scene>
+
   </body>
 </html>
