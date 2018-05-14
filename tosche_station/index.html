@@ -17,9 +17,10 @@
   </a-assets>
 
   <a-entity scale="2.129 2.129 2.129" geometry="" id="btn1_test" mixin="blue_btn1"></a-entity>
-  <a-entity scale="2.129 2.129 2.129" geometry="primitive:cone;segmentsRadial:4;radiusBottom:1;radiusTop:.75;" id="btn1_test-2" mixin="blue_btn1" position="3.768 2.131 6.313"></a-entity>
-  <a-entity position="-17.703 -0.207 -21.812" scale="10.554 4.249 10.554" geometry="primitive:dodecahedron" id="hill" n-mesh-collider="type: environment" material="src:texture1.jpg;repeat: 4 4;"></a-entity>
-
+  <a-entity scale="5.491 4.328 5.491" geometry="primitive:cone;radiusTop:0.75;segmentsRadial:4" id="btn1_test-2" mixin="blue_btn1" position="-11.638 4.468 -18.793"></a-entity>
+  <a-entity id="hills" position="-68.321 0 122.058">
+    <a-entity position="-22.726 -0.207 -27.567" scale="55.789 4.249 65.685" geometry="primitive:dodecahedron" id="hill" n-mesh-collider="type:environment" material="repeat:4 4;src:texture1.jpg"></a-entity><a-entity position="-77.689 -0.207 -45.999" scale="55.789 12.337 65.685" geometry="primitive:dodecahedron" id="hill-5" n-mesh-collider="type:environment" material="repeat:4 4;src:texture1.jpg"></a-entity><a-entity position="56.284 -0.207 -21.812" scale="55.789 33.889 36.966" geometry="primitive:dodecahedron" id="hill-2" n-mesh-collider="type:environment" material="repeat:4 4;src:texture1.jpg"></a-entity><a-entity position="-81.414 -0.207 5.241" scale="26.702 83.976 11.935" geometry="primitive:dodecahedron" id="hill-4" n-mesh-collider="type:environment" material="repeat:4 4;src:texture1.jpg"></a-entity><a-entity position="-12.056 -0.207 -85.843" scale="55.789 33.889 36.966" geometry="primitive:dodecahedron" id="hill-3" n-mesh-collider="type:environment" material="repeat:4 4;src:texture1.jpg" rotation="0 19.82433971152648 0"></a-entity>
+  </a-entity>
 <!-- Textured plane parallel to ground. -->
 <a-plane material="src:cracked.jpg;repeat: 4000 4000;" height="4000" width="4000" rotation="-90 0 0"></a-plane>
 
