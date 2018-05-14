@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.min.js"></script>
+  </head>
+  <body>
+    <a-scene altspace="fullspace:true;">
+  <a-assets>
+      <a-mixin id="vapmat1" material="color:#ffffff;src:btn1.png;"></a-mixin>
+  </a-assets>
+
+<!-- Basic evaporator. -->
+<a-entity id="evap">
+
+    <a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.414 0" scale="0.095 5.726 0.095" id="evap-part"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 17.191 0" scale="0.265 0.212 0.265" id="evap-part-2"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 17.965 0" scale="0.265 0.212 0.265" id="part-5"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 18.337 0" scale="0.204 0.163 0.204" id="part-6"></a-entity><a-entity geometry="primitive:cone;height:3;radiusTop:0.5" mixin="vapmat1" position="0 18.789 0" scale="0.384 0.139 0.384" id="part-7"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 16.312 0" scale="0.265 0.228 0.265" id="part-2"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 16.312 0" scale="0.208 1.381 0.208" id="part-18"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 15.304 0" scale="0.265 0.296 0.265" id="part-3"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 14.33 0" scale="0.265 0.296 0.265" id="part-4"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.781 0" scale="0.345 0.012 0.345" id="part-8"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.711 0" scale="0.345 0.012 0.345" id="part-9"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.624 0" scale="0.345 0.012 0.345" id="part-10"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.559 0" scale="0.345 0.012 0.345" id="part-11"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.466 0" scale="0.345 0.012 0.345" id="part-12"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.394 0" scale="0.345 0.012 0.345" id="part-13"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.34 0" scale="0.345 0.012 0.345" id="part-14"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.234 0" scale="0.449 0.049 0.449" id="part-15"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 11.534 0" scale="0.449 0.521 0.449" id="part-19"></a-entity><a-entity geometry="height:3" mixin="vapmat1" position="0 9.152 0" scale="1.997 0.835 1.806" id="part-23"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 6.558 0" scale="0.449 0.521 0.449" id="part-20"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 7.531 0" scale="0.4 0.088 0.4" id="part-21"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 10.593 0" scale="0.4 0.088 0.4" id="part-22"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.151 0" scale="0.388 0.042 0.388" id="part-16"></a-entity><a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" position="0 13.014 0" scale="0.449 0.049 0.449" id="part-17"></a-entity>
+    
+    <!--begin mounts-->
+    <a-entity id="mounts" position="0 12.545 0">
+        <a-entity id="mount">
+          <a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" scale="0.414 0.073 0.414" id="mount_part"></a-entity><a-entity geometry="height:3" mixin="vapmat1" scale="4.251 0.049 0.293" id="mount_part-2"></a-entity><a-entity geometry="height:3" mixin="vapmat1" scale="4.251 0.049 0.293" id="mount_part-3" rotation="0 -90.01166961505233 0"></a-entity>
+        </a-entity><a-entity id="mount-2" position="0 -6.93 0">
+          <a-entity geometry="primitive:cylinder;height:3;radius:2" mixin="vapmat1" scale="0.414 0.073 0.414" id="mount_part"></a-entity><a-entity geometry="height:3" mixin="vapmat1" scale="4.251 0.049 0.293" id="mount_part-2"></a-entity><a-entity geometry="height:3" mixin="vapmat1" scale="4.251 0.049 0.293" id="mount_part-3" rotation="0 -90.01166961505233 0"></a-entity>
+        </a-entity>
+        </a-entity>
+   <!--end begin mounts-->
+   <!--begin stands-->
+   <a-entity id="stands">
+      <a-entity id="whole_stand">
+       <a-entity id="stand-1" geometry="primitive:cylinder" mixin="vapmat1" position="2.062 9.798 0" scale="0.186 8.754 0.186"></a-entity><a-entity id="stand-2" geometry="primitive:torus;radius:0.4;radiusTubular:0.010000000000000009;segmentsRadial:34" mixin="vapmat1" position="2.062 5.753 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-3" geometry="primitive:torus;radius:0.4;radiusTubular:0.01;segmentsRadial:34" mixin="vapmat1" position="2.062 12.477 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-4" geometry="primitive:torus;radius:0.4;radiusTubular:0.01;segmentsRadial:34" mixin="vapmat1" position="2.062 14.171 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-5" geometry="primitive:sphere;radius:0.4" mixin="vapmat1" position="2.062 14.171 0" scale="0.424 0.461 0.424" rotation="-90.012 0 0"></a-entity>
+    </a-entity><a-entity id="whole_stand-3" position="-2.053 0 -2.197">
+       <a-entity id="stand-1" geometry="primitive:cylinder" mixin="vapmat1" position="2.062 9.798 0" scale="0.186 8.754 0.186"></a-entity><a-entity id="stand-2" geometry="primitive:torus;radius:0.4;radiusTubular:0.010000000000000009;segmentsRadial:34" mixin="vapmat1" position="2.062 5.753 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-3" geometry="primitive:torus;radius:0.4;radiusTubular:0.01;segmentsRadial:34" mixin="vapmat1" position="2.062 12.477 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-4" geometry="primitive:torus;radius:0.4;radiusTubular:0.01;segmentsRadial:34" mixin="vapmat1" position="2.062 14.171 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-5" geometry="primitive:sphere;radius:0.4" mixin="vapmat1" position="2.062 14.171 0" scale="0.424 0.461 0.424" rotation="-90.012 0 0"></a-entity>
+    </a-entity><a-entity id="whole_stand-4" position="-2.053 0 2.04">
+       <a-entity id="stand-1" geometry="primitive:cylinder" mixin="vapmat1" position="2.062 9.798 0" scale="0.186 8.754 0.186"></a-entity><a-entity id="stand-2" geometry="primitive:torus;radius:0.4;radiusTubular:0.010000000000000009;segmentsRadial:34" mixin="vapmat1" position="2.062 5.753 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-3" geometry="primitive:torus;radius:0.4;radiusTubular:0.01;segmentsRadial:34" mixin="vapmat1" position="2.062 12.477 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-4" geometry="primitive:torus;radius:0.4;radiusTubular:0.01;segmentsRadial:34" mixin="vapmat1" position="2.062 14.171 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-5" geometry="primitive:sphere;radius:0.4" mixin="vapmat1" position="2.062 14.171 0" scale="0.424 0.461 0.424" rotation="-90.012 0 0"></a-entity>
+    </a-entity><a-entity id="whole_stand-2" position="-4.217 0 0">
+       <a-entity id="stand-1" geometry="primitive:cylinder" mixin="vapmat1" position="2.062 9.798 0" scale="0.186 8.754 0.186"></a-entity><a-entity id="stand-2" geometry="primitive:torus;radius:0.4;radiusTubular:0.010000000000000009;segmentsRadial:34" mixin="vapmat1" position="2.062 5.753 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-3" geometry="primitive:torus;radius:0.4;radiusTubular:0.01;segmentsRadial:34" mixin="vapmat1" position="2.062 12.477 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-4" geometry="primitive:torus;radius:0.4;radiusTubular:0.01;segmentsRadial:34" mixin="vapmat1" position="2.062 14.171 0" scale="0.452 0.492 0.452" rotation="-90.01166961505233 0 0"></a-entity><a-entity id="stand-5" geometry="primitive:sphere;radius:0.4" mixin="vapmat1" position="2.062 14.171 0" scale="0.424 0.461 0.424" rotation="-90.012 0 0"></a-entity>
+    </a-entity>
+     </a-entity>
+      <!--end stands-->
+  
+      <a-entity id="base">
+          <a-entity id="spin">
+            <a-entity id="base_part" geometry="primitive:cylinder" mixin="vapmat1" position="0 5.219 0" scale="1 0.434 1"></a-entity><a-entity id="base_part-2" geometry="primitive:cylinder" mixin="vapmat1" position="0 4.962 0" scale="1.616 0.06 1.616"></a-entity><a-entity id="base_part-3" geometry="" mixin="vapmat1" position="1.079 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 -29.278143331185067"></a-entity><a-entity id="base_part-4" geometry="" mixin="vapmat1" position="-1.069 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 29.278"></a-entity>
+             </a-entity><a-entity id="spin-2" rotation="0 -41.138369690393105 0">
+            <a-entity id="base_part" geometry="primitive:cylinder" mixin="vapmat1" position="0 5.219 0" scale="1 0.434 1"></a-entity><a-entity id="base_part-2" geometry="primitive:cylinder" mixin="vapmat1" position="0 4.962 0" scale="1.616 0.06 1.616"></a-entity><a-entity id="base_part-3" geometry="" mixin="vapmat1" position="1.079 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 -29.278143331185067"></a-entity><a-entity id="base_part-4" geometry="" mixin="vapmat1" position="-1.069 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 29.278"></a-entity>
+             </a-entity><a-entity id="spin-3" rotation="0 -79.98490820026292 0">
+            <a-entity id="base_part" geometry="primitive:cylinder" mixin="vapmat1" position="0 5.219 0" scale="1 0.434 1"></a-entity><a-entity id="base_part-2" geometry="primitive:cylinder" mixin="vapmat1" position="0 4.962 0" scale="1.616 0.06 1.616"></a-entity><a-entity id="base_part-3" geometry="" mixin="vapmat1" position="1.079 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 -29.278143331185067"></a-entity><a-entity id="base_part-4" geometry="" mixin="vapmat1" position="-1.069 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 29.278"></a-entity>
+             </a-entity><a-entity id="spin-4" rotation="0 -111.26840381440587 0">
+            <a-entity id="base_part" geometry="primitive:cylinder" mixin="vapmat1" position="0 5.219 0" scale="1 0.434 1"></a-entity><a-entity id="base_part-2" geometry="primitive:cylinder" mixin="vapmat1" position="0 4.962 0" scale="1.616 0.06 1.616"></a-entity><a-entity id="base_part-3" geometry="" mixin="vapmat1" position="1.079 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 -29.278143331185067"></a-entity><a-entity id="base_part-4" geometry="" mixin="vapmat1" position="-1.069 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 29.278"></a-entity>
+             </a-entity><a-entity id="spin-5" rotation="0 -145.8177588607945 0">
+            <a-entity id="base_part" geometry="primitive:cylinder" mixin="vapmat1" position="0 5.219 0" scale="1 0.434 1"></a-entity><a-entity id="base_part-2" geometry="primitive:cylinder" mixin="vapmat1" position="0 4.962 0" scale="1.616 0.06 1.616"></a-entity><a-entity id="base_part-3" geometry="" mixin="vapmat1" position="1.079 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 -29.278143331185067"></a-entity><a-entity id="base_part-4" geometry="" mixin="vapmat1" position="-1.069 4.962 0" scale="0.984 0.484 0.134" rotation="0 0 29.278"></a-entity>
+             </a-entity>
+          </a-entity>
+  
+  
+  
+  </a-entity>
+<!--end basic evap-->
+
+<a-entity position="1 1 1" camera="active:true;userHeight:1.6" wasd-controls="easing:20.01;fly:true;acceleration:165" rotation="-38.80136368210983 -1208.0242228532563 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" data-aframe-inspector="default-camera" gearvr-controls>
+  <a-cursor></a-cursor>
+
+</a-entity>
+
+    </a-scene>
+    <script>
+    var animEl = document.querySelector('#mybox');
+    console.log(animEl);
+    </script>
+  </body>
+</html>
