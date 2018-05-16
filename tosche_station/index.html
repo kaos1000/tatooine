@@ -8,10 +8,10 @@
   <a-assets>
       <a-mixin id="temp" material="color:#f7ece1;src:stucco_shade.jpg;"></a-mixin>
       <a-mixin id="blue" material="color:#f7c260"></a-mixin>
-      <a-mixin id="texture1" material="texture1.jpg;"></a-mixin>     
-      <a-mixin id="texture2" material="texture2.jpg;"></a-mixin>   
-      <a-mixin id="texture3" material="texture3.jpg;"></a-mixin> 
- 
+      <a-mixin id="texture1" material="src:texture1.jpg;"></a-mixin>     
+      <a-mixin id="texture2" material="src:texture2.jpg;"></a-mixin>   
+      <a-mixin id="texture3" material="src:texture3.jpg;"></a-mixin> 
+  
       
       <img id="sky" src="sky.jpg">  
       <img id="desert" src="cracked.jpg">  
@@ -19,7 +19,8 @@
   <a-entity id="root" position="53.792 0 -154.487">
       <a-entity id="boiler">
           <!--smoke-->
-          <a-entity scale="1.44 34.899 1.44" geometry="primitive:cylinder;openEnded:true" material="side:double" id="smoke" mixin="temp" position="-120.179 20.495 27.173" rotation="0 133.442 0" n-mesh-collider="type:environment" altspace-cursor-collider="enabled:false" n-object="res:effects/smoke"></a-entity>
+          <a-entity scale="1.44 15.905 1.44" geometry="primitive:cylinder;openEnded:true" material="side:double" id="smoke" mixin="temp" position="-120.179 13.8 27.173" rotation="0 133.442 0" n-mesh-collider="type:environment" altspace-cursor-collider="enabled:false" n-object="res:effects/smoke"></a-entity>
+          <a-entity scale="0.601 19.358 0.601" geometry="primitive:cylinder;openEnded:true;segmentsHeight:1;segmentsRadial:3" material="repeat:1 10;side:double;transparent:true;src:catwalk.png" id="scaff" position="-121.933 9.204 26.853" rotation="0 133.442 0" n-mesh-collider="type:environment" altspace-cursor-collider="enabled:false"></a-entity>
             
        </a-entity>
 
