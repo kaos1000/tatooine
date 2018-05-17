@@ -7,6 +7,7 @@
     <a-scene altspace="fullspace:true;">
   <a-assets>
       <a-mixin id="temp" material="color:#f7ece1;src:stucco512.jpg;"></a-mixin>
+      <a-mixin id="temp2" material="color:#f7ece1;src:stucco.jpg;"></a-mixin>   
       <a-mixin id="temp_dark" material="color:#160002;src:stucco512.jpg;"></a-mixin>     
       <a-mixin id="blue" material="color:#f7c260"></a-mixin>
       <a-mixin id="hills512" material="src:hills512.jpg;"></a-mixin> 
@@ -19,6 +20,13 @@
       <img id="desert" src="cracked.jpg">  
   </a-assets>
   <a-entity id="root" position="53.792 0 -154.487">
+    <a-entity id="pipes">
+        <a-entity id="main">
+            <a-entity geometry="arc:90;primitive:torus" id="start" material="side:double;src:stucco_shade.jpg"position="-68.329 5.367 105.009" rotation="0 -47.09713075975367 179.96604345059157" scale="0.706 0.706 0.706">
+                <a-entity id="st" n-object="res:effects/steam" position="0.995 0.001 0.058"></a-entity>
+            </a-entity>
+        </a-entity>
+    </a-entity>
       <a-entity id="boiler" position="-125.054 0 25.894">
         <a-entity id="main">
           <!--smoke-->
