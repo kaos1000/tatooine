@@ -2,6 +2,39 @@
   <head>
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://sdk.altvr.com/libs/altspace.js/2.9.0/altspace.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117844898-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-117844898-1');
+    </script>	
+     
+      </head>
+      <body>
+     <script>
+       /**/
+         if (window.navigator.userAgent.indexOf('Altspace') == -1) {
+          document.write('<a-scene>');
+        }else{
+          document.write('<a-scene sync-system="app: Tatooine; author: Altspace" altspace="fullspace:true;">');
+          
+           altspace.getUser().then(function (fulfilled) {
+                // yay, you got a new phone
+                console.log(fulfilled);
+             // output: { brand: 'Samsung', color: 'black' }
+            })
+            .catch(function (error) {
+                // oops, mom don't buy it
+                console.log(error.message);
+             // output: 'mom is not happy'
+            });   
+        }
+    
+     </script>
+
   </head>
   <body>
     <a-scene altspace="fullspace:true;">
