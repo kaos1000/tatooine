@@ -20,6 +20,16 @@
       <img id="desert" src="cracked.jpg">  
   </a-assets>
   <a-entity id="root" position="53.792 0 -154.487">
+      <a-entity id="fan" position="-68.603 4.821 104.698" rotation="-73.79696401285004 85.08423257692725 -41.883214824063174" scale="0.516 0.516 0.516">
+          <a-entity id="main">
+                  <a-entity id="darkback" material="opacity:0.5;color:#000000" position="-0.014 -0.132 0" scale="0.496 0.082 0.496" geometry="primitive:cylinder"></a-entity>
+                  <a-entity rotation="0 183.0732760831342 0">
+                         <a-entity id="start" geometry="" material="color:#000000" rotation="0 16.55848027928079 0" scale="0.204 0.09 1"></a-entity>
+                         <a-entity id="start-2" geometry="" material="color:#000000" rotation="0 106.51285411482004 0" scale="0.204 0.09 1"></a-entity>
+                         <a-animation attribute="rotation" dur="10000" fill="none" easing="linear" to="0 360 0" repeat="indefinite" direction="normal"></a-animation>
+                       </a-entity>
+                  </a-entity>
+        </a-entity>
     <a-entity id="pipes">
         <a-entity id="main">
             <a-entity geometry="arc:90;primitive:torus" id="start" material="side:double;src:stucco_shade.jpg"position="-68.329 5.367 105.009" rotation="0 -47.09713075975367 179.96604345059157" scale="0.706 0.706 0.706">
