@@ -68,7 +68,7 @@
         <a-entity n-box-collider="type:environment" position="3.586 3.692 -1.017" scale="0.506 15.6 0.401" geometry="" material="repeat:0.35 13;transparent:true;src:#catwalk;"></a-entity>
         <a-entity n-box-collider="type:environment" position="6.27 3.692 -0.964" scale="0.506 15.6 0.401" geometry="" material="repeat:0.35 13;transparent:true;src:#catwalk;"></a-entity>
     </a-entity>
-      <a-entity n-box-collider="type: environment;" position="4.845 0.025 0.041" scale="3.056 0.06 1.679" geometry="" id="lift" sync="" sync-transform="" material="src:#catwalk;repeat: 1 1;transparent:true;">
+      <a-entity n-box-collider="type: environment;" position="4.845 0.025 0.041" scale="3.056 0.06 1.679" geometry="" id="lift" sync="" sync-transform="" material="src:#catwalk;repeat: 1 1;transparent:true;" n-sound="src:elevator2.wav;autoplay:false;loop:false;on:elevator_change;maxDistance:.1;volume:.2;">
           <a-animation attribute="position" to="4.845 0.025 0.041" from="4.845 8.185 0.041" dur="10000" begin="elevator_down"></a-animation>         
           <a-animation attribute="position" from="4.845 0.025 0.041" to="4.845 8.185 0.041" dur="10000" begin="elevator_up"></a-animation>
     
@@ -134,17 +134,18 @@
       el_up.addEventListener('click', function (event) {
         
         lift.emit('elevator_up', 'text', true);
+        lift.emit('elevator_change', 'text', true);
       });
       el_down.addEventListener('click', function (event) {
-       
+        lift.emit('elevator_change', 'text', true);
         lift.emit('elevator_down', 'text', true);
       });
       el_up2.addEventListener('click', function (event) {
-       
+        lift.emit('elevator_change', 'text', true);
         lift.emit('elevator_up', 'text', true);
       });
       el_down2.addEventListener('click', function (event) {
-       
+        lift.emit('elevator_change', 'text', true);
         lift.emit('elevator_down', 'text', true);
       });
 
