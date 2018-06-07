@@ -14,30 +14,18 @@
      
       </head>
       <body>
-     <script>
-       /**/
-         if (window.navigator.userAgent.indexOf('Altspace') == -1) {
-          document.write('<a-scene>');
-        }else{
-          document.write('<a-scene sync-system="app: Tatooine; author: Altspace" altspace="fullspace:true;">');
-          
-           altspace.getUser().then(function (fulfilled) {
-                // yay, you got a new phone
-                console.log(fulfilled);
-             // output: { brand: 'Samsung', color: 'black' }
-            })
-            .catch(function (error) {
-                // oops, mom don't buy it
-                console.log(error.message);
-             // output: 'mom is not happy'
-            });   
-        }
-    
-     </script>
+
 
   </head>
   <body>
     <a-scene altspace="fullspace:true;">
+        <a-entity position="1 1 1" camera="active:true;userHeight:1.6" wasd-controls="easing:20.01;fly:true;acceleration:165" rotation="-38.80136368210983 -1208.0242228532563 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" data-aframe-inspector="default-camera" gearvr-controls>
+            <a-cursor></a-cursor>
+        
+        </a-entity>
+
+        <a-entity id="billboard" geometry="" material="src:billboard.png" position="10.098 31.371 -65.836" rotation="12.948846169956605 -65.20259708588767 5.901465289847479" scale="28.406 28.406 0.137"></a-entity>
+
   <a-assets>
       <a-mixin id="temp" material="color:#f7ece1;src:stucco512.jpg;"></a-mixin>
       <a-mixin id="temp2" material="color:#f7ece1;src:stucco.jpg;"></a-mixin>   
@@ -136,13 +124,7 @@
   </a-entity>
 <!-- Textured plane parallel to ground. -->
 <a-plane material="src:cracked.jpg;repeat: 4000 4000;" height="4000" width="4000" rotation="-90 0 0" altspace-cursor-collider="enabled: false"></a-plane>
-<a-entity position="1 1 1" camera="active:true;userHeight:1.6" wasd-controls="easing:20.01;fly:true;acceleration:165" rotation="-38.80136368210983 -1208.0242228532563 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="" data-aframe-inspector="default-camera" gearvr-controls>
-  <a-cursor></a-cursor>
 
-
-
-
-</a-entity>
      <a-sky src="#sky" radius="2500"></a-sky> 
     </a-scene>
 
